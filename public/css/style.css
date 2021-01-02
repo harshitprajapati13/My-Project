@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Oswald', sans-serif;
+}
+.navbar{
+    
+    background-color: rgb(36, 36, 73);
+    padding: 10px 12px;
+    margin: 0px 0px;
+}
+.navbar-brand{
+    font-size: 25px;
+    color: rgb(212, 211, 211);
+}
+.nav-link{
+    color: rgb(212, 211, 211);
+    font-size: 20px;
+    
+}
+.nav-link:hover{
+    color: white;
+}
+.navbar-brand:hover{
+    color: rgb(202, 243, 226);
+}
+.navbar-toggler{
+    background-color: rgb(212, 211, 211);
+}
+.fa-snowboarding{
+    transition: all linear;
+    animation: rot 2s linear infinite;
+    color: rgb(231, 74, 46);
+}
+
+@keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.main_header_left{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main_header_left p{
+    font-size: 2rem;
+}
+.main_header_left h1{
+    font-size: 4rem;
+}
+#clr{
+    color: rgb(11, 175, 175);
+}
+.paraClr{
+    color: rgb(90, 49, 42);
+}
+.main_header_right{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.w-100{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 15px;
+}
+footer{
+    width: 100%;
+    background-color:rgb(26, 26, 51);
+    color: rgb(230, 225, 225);
+    text-align: center;
+    font-size: 18px;
+    line-height: 45px;
+}
+div .container-fluid{
+    width: 100%;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+/* responsive */
+@media(max-width:768px){
+    .main_header_left{
+        height: auto;
+        margin: 40px 0px;
+    }
+    .main_header_right{
+        height: auto;
+        margin-top: 30px;
+    }
+    footer{
+        margin-top: 20px;
+    }
+}
+#paraClr{
+    color: rgb(73, 65, 107);
+}
+
+.btn-primary{
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgb(31, 31, 110);
+    
+}

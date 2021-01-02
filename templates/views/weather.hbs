@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/png">
+</head>
+{{!-- *************Navbar************* --}}
+{{>navbar}}
+
+{{!-- ***********Inline CSS********** --}}
+<style>
+    .screen {
+        height: 100vh;
+    }
+
+    .tempInfo {
+        margin: auto;
+        background-color: rgba(42, 33, 66, 0.746);
+        width: 40rem;
+        border-radius: 9px;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .top-layer {
+        background-color: rgb(52, 52, 77);
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 12px;
+        align-items: center;
+    }
+
+    .top-layer p {
+        font-weight: bold;
+        color: rgb(250, 249, 249);
+        padding: 5px;
+        font-size: 1.3rem;
+    }
+
+    .main-Layer {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .main-Layer #city_name {
+        color: rgb(17, 19, 19);
+        font-weight: 600;
+        font-size: 35px;
+        padding-left: 20px;
+
+    }
+    
+
+    .data_hide {
+        visibility: hidden;
+        transition: all 0.3s linear;
+    }
+
+    .main-Layer .middle-layer {
+        display: flex;
+        justify-content: space-around;
+        color: wheat;
+        font-size: 60px;
+
+    }
+
+    .temp_form {
+        width: 40rem;
+        position: relative;
+        margin: 22px auto;
+        align-items: center;
+    }
+
+    .temp_form input[type="text"] {
+        width: 100%;
+
+        outline: none;
+        font-size: 1.5rem;
+        border-radius: 12px;
+    }
+
+    ::placeholder {
+        color: rgb(125, 123, 173);
+        background-color: rgb(242, 239, 248);
+    }
+
+    .temp_form input[type="submit"] {
+        position: absolute;
+        top: 3px;
+        right: 0px;
+        bottom: 3px;
+        left: 595px;
+        border-end-end-radius: 12px;
+        background-color: rgb(60, 43, 133);
+        color: rgb(239, 253, 251);
+        border-radius: 12px;
+
+    }
+
+    sup {
+        margin: 0px 13px 0px 0px
+    }
+
+    .temp_form input[type="submit"]:hover {
+        color:rgb(248, 252, 251);
+        background-color: rgb(96, 85, 145);
+    }
+</style>
+{{!-- *********End******** --}}
+
+<body>
+
+    <div class="container-fluid main-menu screen">
+        <div class="row">
+            <div class="col-md-12 col-12 mx-auto">
+                <div class="main-content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter Your City Name" autocomplete="off">
+                        <input type="submit" value="search" id="submitBtn">
+                    </form>
+                </div>
+                <div class="tempInfo">
+                    <div class="top-layer">
+                        <p id="day">Today</p>
+                        <p id="todayDate">Date</p>
+                    </div>
+                    <div class="main-Layer ">
+                        <p id="city_name"></p>
+                        <div class="middle-layer data_hide">
+                            <p id="temp "><span id="temp_real_val">18 </span><sup>o</sup>C</p>
+                            <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****************footer********************  -->
+    {{>footer}}
+
+    <script src="js/main.js"></script>
+
+<script>
+    const day=document.getElementById('day');
+    const getCurrentDay=()=>{
+    let weekday=new Array(7);
+    weekday[0]="Sunday";
+    weekday[1]="Monday";
+    weekday[2]="Tuesday";
+    weekday[3]="Wednesday";
+    weekday[4]="Thursday";
+    weekday[5]="Friday";
+    weekday[6]="Saturday";
+    let currentDay= new Date();
+    let today=weekday[currentDay.getDay()];
+    day.innerText=today;
+}
+getCurrentDay();
+</script>
+</body>
+
+</html>
